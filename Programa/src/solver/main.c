@@ -27,5 +27,7 @@ int main()
 	printf("%d\n", stack->size);
 	printf("%d\n", stack->first->color);
 
+	free(stack);
+
 	return 0;
 }
