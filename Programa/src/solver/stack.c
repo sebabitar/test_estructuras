@@ -45,9 +45,11 @@ int pop(Stack* stack)
 void destroy(Stack *stack)
 {
   if (stack->first == NULL) {
+    free(stack->first);
     free(stack);
   } else {
     Node *aux = stack->first;
+    free(stack->first);
     stack->first = aux->next;
     free(aux);
     destroy(stack);
