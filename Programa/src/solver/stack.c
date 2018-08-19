@@ -49,7 +49,7 @@ void destroy(Stack *stack)
     free(stack);
   } else {
     Node *aux = stack->first;
-    stack->first = stack->first->next;
+    stack->first = aux->next;
     free(aux);
     destroy(stack);
   }
