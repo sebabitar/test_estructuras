@@ -11,6 +11,7 @@ int main()
 	push(stack, 1);
 	push(stack, 4);
 
+	/*
 	printf("%d\n", stack->first->color);
 	printf("%d\n", stack->first->next->color);
 
@@ -22,7 +23,7 @@ int main()
 	int b = pop(stack);
 
 	printf("%d\n", b);
-
+  */
 	destroy(stack);
 
 	return 0;

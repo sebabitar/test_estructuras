@@ -20,7 +20,6 @@ void push(Stack* stack, int color)
   new_node->next = stack->first;
   stack->first = new_node;
   stack->size ++;
-  /* Aqui agrega tu código */
 }
 
 int pop(Stack* stack)
