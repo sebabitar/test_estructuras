@@ -49,7 +49,6 @@ void destroy(Stack *stack)
     free(stack);
   } else {
     Node *aux = stack->first;
-    free(stack->first);
     stack->first = aux->next;
     free(aux);
     destroy(stack);
