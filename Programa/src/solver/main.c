@@ -23,7 +23,7 @@ int main()
 
 	printf("%d\n", b);
 
-	free(stack);
+	destroy(stack);
 
 	return 0;
 }
