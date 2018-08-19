@@ -30,14 +30,14 @@ int pop(Stack* stack)
   } else {
     stack->size --;
     Node *aux = stack->first;
-    //printf("%d\n", aux->color);
-    if (stack->first->next == NULL) {
+    if (aux->next == NULL) {
       stack->first = NULL;
     } else {
-      stack->first = stack->first->next;
+      stack->first = aux->next;
     }
     int color_return = aux->color;
     free(aux);
+    //free(stack->first);
     return color_return;
   }
   /* Aqui agrega tu código */

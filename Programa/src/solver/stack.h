@@ -6,7 +6,7 @@ typedef struct stack Stack;
 typedef struct node Node;
 
 
-struct node
+struct node 
 {
   int color;
   struct node *next;
