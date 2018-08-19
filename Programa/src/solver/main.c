@@ -10,8 +10,6 @@ int main()
 	/* Esta linea indica que el programa termino sin errores*/
 	push(stack, 1);
 	push(stack, 4);
-	push(stack, 7);
-	push(stack, 2);
 
 	printf("%d\n", stack->first->color);
 	printf("%d\n", stack->first->next->color);
@@ -24,8 +22,6 @@ int main()
 	int b = pop(stack);
 
 	printf("%d\n", b);
-	printf("%d\n", stack->size);
-	printf("%d\n", stack->first->color);
 
 	free(stack);
 
