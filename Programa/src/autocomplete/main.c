@@ -23,4 +23,5 @@ int main()
 	display(trie, str, level);
 
 	destroy(trie);
+	return 0
 }
