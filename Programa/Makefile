@@ -7,7 +7,12 @@
 ###############################################################################
 
 # El compilador a usar: Gnu C Compiler, Standard 2011 with GNU extensions
-CC=gcc -std=gnu11
+UNAME := $(shell uname)
+ifeq ($(UNAME), Darwin)
+	CC = gcc-5 -std=gnu11
+else
+	CC = gcc -std=gnu11
+endif
 # La carpeta donde va todo el código
 SRC=src
 # La carpeta donde van todos los archivos de objeto
@@ -34,10 +39,6 @@ CFLAGS=-Wunused -Wall $(OPT)
 
 # Matemáticas (C Math library)
 MTH=-lm
-# Interfaz gráfica GTK+
-# GTK=`pkg-config --cflags --libs gtk+-3.0`
-# Portable Network Graphics (PNG)
-# PNG=-lpng
 
 LIB=$(MTH)
 
@@ -49,7 +50,7 @@ LIB=$(MTH)
 COMMON=
 
 # Directorios que serán compilados a un programa
-PROGRAMS=solver
+PROGRAMS=autocomplete
 
 # Todos los directorios que contienen archivos de código
 SRCDIR=$(COMMON) $(PROGRAMS)
