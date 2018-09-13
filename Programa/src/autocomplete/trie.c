@@ -75,10 +75,11 @@ char * search(Trie *root, char *word)
     bool termine = true;
     for (int j = 0; j < 27; j++){
       if (actual->children[j]){
-        if (actual->children[j]->freq_max >= actual->freq_max)
+        if (actual->children[j]->freq_max >= actual->freq_max){
           termine = false;
           printf("No he terminado!! \n");
           break;
+        }
       }
     }
     if (termine)
@@ -100,25 +101,23 @@ char * search(Trie *root, char *word)
               letra[m] = 'a';
             } else {
               letra[m] = 'a' + k;
-              printf("%c\n", letra[m]);
             }
           }
+          printf("%c\n", letra[m]);
           letra[m+1] = '\0';
           actual = actual->children[k];
           m ++;
           break;
-          }
         }
       }
-      if (k == 26){
-        end = true;
-        printf("la variable letra tiene: %s. nose que onda\n", letra);
-        strcat(word, letra);
-        break;
-      }
     }
-
-
+    if (k == 26){
+      end = true;
+      printf("la variable letra tiene: %s. nose que onda\n", letra);
+      strcat(word, letra);
+      break;
+    }
+  }
   printf("%s\n", word);
   return word;
 }
