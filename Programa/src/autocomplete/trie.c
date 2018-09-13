@@ -101,6 +101,8 @@ char * search(Trie *root, char *word)
           }
           if (k == 26){
             end = true;
+            letra = '/0';
+            strcat(word, &letra);
             break;
           }
         }
