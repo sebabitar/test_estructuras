@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
 	}
 
 	//// Ejemplo de lectura de strings:
+	Trie *trie = trie_init();
 
 	// Leo el numero de entradas en la base de datos
 	int n;
@@ -42,6 +43,22 @@ int main(int argc, char *argv[])
 		// Leo el string aprovechando que se el largo maximo
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, database);
+		printf("%s\n", chars);
+		//char * respuesta;
+		//respuesta = search(trie, chars);
+		insert(trie, chars, freq);
+
+
+	}
+	int m;
+	fscanf(queries, "%d", &m);
+
+	for (int i = 0; i < m; i++) {
+		int length;
+		fscanf(queries, "%d", &length);
+		printf("length = %d\n", length);
+		char chars[MAX_LENGTH];
+		fgets(chars, MAX_LENGTH, queries);
 		printf("%s\n", chars);
 	}
 
