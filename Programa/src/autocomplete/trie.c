@@ -80,6 +80,7 @@ char * search(Trie *root, char *word)
       }
     }
     if (termine)
+      printf("aqui!!!!\n");
       return word;
   }
   char letra[2];
