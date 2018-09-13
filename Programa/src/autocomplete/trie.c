@@ -92,7 +92,11 @@ char * search(Trie *root, char *word)
               if (index == 26) {
                 letra[m] = ' ';
               } else {
-                letra[m] = 'a' + index;
+                if (index == 0){
+                  letra[m] = 'a';
+                } else {
+                  letra[m] = 'a' + index;
+                }
                 }
               actual = actual->children[index];
               m += 1;
