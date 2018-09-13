@@ -65,16 +65,17 @@ char * search(Trie *root, char *word)
     } else {
       index = CHAR_TO_INDEX(word[i]);
     }
-    if (!actual->children[index])
-        return word;
+    if (!(actual->children[index]))
+      printf("DIME QUE NO\n");
+      return word;
     actual = actual->children[index];
   }
   //reviso si la palabra es la mejor
   if (actual->end_of_word){
     bool termine = true;
     for (int j = 0; j < 27; j++){
-      if (actual->children[index]){
-        if (actual->children[index]->freq_max >= actual->freq_max)
+      if (actual->children[j]){
+        if (actual->children[j]->freq_max >= actual->freq_max)
           termine = false;
       }
     }
