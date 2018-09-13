@@ -41,7 +41,6 @@ int main(int argc, char *argv[])
 		// Leo el string aprovechando que se el largo maximo
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, database);
-		chars[length] = '\0';
 		insert(trie, chars, freq);
 
 	}
@@ -54,7 +53,7 @@ int main(int argc, char *argv[])
 		int length;
 		fscanf(queries, "%d", &length);
 		char chars[MAX_LENGTH];
-		fgets(chars, length+1, queries);
+		fgets(chars, MAX_LENGTH, queries);
 		char * respuesta = search(trie, chars);
 		printf("me salio: %s\n", respuesta);
 		fprintf(output, "%s\n", respuesta);
