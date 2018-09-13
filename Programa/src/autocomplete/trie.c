@@ -100,7 +100,6 @@ char * search(Trie *root, char *word)
             letra[m] = 'a' + k;
           }
           printf("%c\n", letra[m]);
-          letra[m+1] = '\0';
           actual = actual->children[k];
           m ++;
           break;
@@ -108,6 +107,7 @@ char * search(Trie *root, char *word)
       }
       if (k == 26){
         end = true;
+        letra[m+1] = '\0';
         printf("la variable letra tiene: %s. nose que onda\n", letra);
         strcat(word, letra);
         break;

@@ -18,7 +18,7 @@ int main()
   for (int j = 0; j < ARRAY_SIZE(keys); j++)
       insert(trie, keys[j], 5);
 
-  char str[20];
+  char * str;
 	char key[20] = "the";
 	str = search(trie, key);
 
