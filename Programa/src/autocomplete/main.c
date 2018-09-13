@@ -1,4 +1,3 @@
-/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -45,7 +44,7 @@ int main(int argc, char *argv[])
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, database);
 		printf("%s\n", chars);
-
+		chars[length] = '\0';
 		insert(trie, chars, freq);
 
 	}
@@ -75,11 +74,11 @@ int main(int argc, char *argv[])
 	return 0;
 }
 
-*/
 
 
 
 
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -101,7 +100,7 @@ int main()
       insert(trie, keys[j], 5);
 
   char * str;
-	char key[20] = "th";
+	char key[20] = "the";
 	str = search(trie, key);
 
 	printf("%s\n", str);
@@ -111,3 +110,5 @@ int main()
 	destroy(trie);
 	return 0;
 }
+
+*/
