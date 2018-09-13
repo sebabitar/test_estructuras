@@ -20,7 +20,10 @@ int main()
 
 	int level = 0;
   char str[20];
-	display(trie, str, level);
+	str = search(trie, "the")
+	printf("%s\n", str);
+
+	
 
 	destroy(trie);
 	return 0;
