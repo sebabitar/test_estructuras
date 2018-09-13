@@ -107,13 +107,13 @@ char * search(Trie *root, char *word)
           if (k == 26){
             end = true;
             letra[m+1] = '\0';
-            printf("%s\n", letra);
+            printf("la variable letra tiene: %s. nose que onda\n", letra);
             strcat(word, letra);
             break;
           }
         }
   }
-  printf("la variable letra tiene: %s. nose que onda\n", word);
+  printf("%s\n", word);
   return word;
 }
 
