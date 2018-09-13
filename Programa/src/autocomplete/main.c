@@ -54,16 +54,9 @@ int main(int argc, char *argv[])
 		int length;
 		fscanf(queries, "%d", &length);
 		char chars[MAX_LENGTH];
-		fgets(chars, length, queries);
-		char * respuesta;
-		if (length == 0){
-			continue;
-			//respuesta = mas_popular(trie);
-		}
-		else {
-			respuesta = search(trie, chars);
-			printf("me salio: %s\n", respuesta);
-		}
+		fgets(chars, length+1, queries);
+		char * respuesta = search(trie, chars);
+		printf("me salio: %s\n", respuesta);
 		fprintf(output, "%s\n", respuesta);
 	}
 
