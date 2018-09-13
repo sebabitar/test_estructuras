@@ -53,6 +53,7 @@ int main(int argc, char *argv[])
 	fscanf(queries, "%d", &m);
 
 	for (int i = 0; i < m; i++) {
+		printf("%d\n", i);
 		int length;
 		fscanf(queries, "%d ", &length);
 		char chars[MAX_LENGTH];
