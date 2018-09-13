@@ -105,6 +105,7 @@ char * search(Trie *root, char *word)
           }
         }
   }
+  printf("%s\n", word);
   return word;
 }
 
