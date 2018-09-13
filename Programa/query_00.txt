@@ -2,5 +2,5 @@
 15 hola como estas
 2 ho
 6 pure c
-0
+0 
 1 e
