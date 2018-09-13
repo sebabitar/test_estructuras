@@ -97,16 +97,17 @@ char * search(Trie *root, char *word)
                 } else {
                   letra[m] = 'a' + index;
                 }
-                }
+              }
+              letra[m+1] = '\0';
               actual = actual->children[index];
-              m += 1;
+              m ++;
               break;
               }
             }
           }
           if (k == 26){
             end = true;
-            letra[m+1] = '\0';
+
             printf("la variable letra tiene: %s. nose que onda\n", letra);
             strcat(word, letra);
             break;
