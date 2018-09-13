@@ -64,6 +64,7 @@ char * search(Trie *root, char *word)
       printf("%c\n", word[i]);
       index = CHAR_TO_INDEX(word[i]);
     }
+    printf("%d\n", index);
     if (!(actual->children[index])){
 
       printf("really nigga: %d \n", index);
