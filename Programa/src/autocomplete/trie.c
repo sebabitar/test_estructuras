@@ -49,7 +49,6 @@ void insert(Trie *root, char *word, int freq)
         }
     }
     actual->end_of_word = true;
-    actual->frequencia = freq;
 }
 
 char * search(Trie *root, char *word)
@@ -74,7 +73,7 @@ char * search(Trie *root, char *word)
     bool termine = true;
     for (int j = 0; j < 27; j++){
       if (actual->children[j]){
-        if (actual->children[j]->freq_max >= actual->freq_max){
+        if (actual->children[j]->freq_max == actual->freq_max){
           termine = false;
           break;
         }
