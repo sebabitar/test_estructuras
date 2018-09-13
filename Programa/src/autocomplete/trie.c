@@ -86,7 +86,6 @@ char * search(Trie *root, char *word)
   char letra[2];
   bool end = false;
   int k;
-  int m = 0;
   letra[0] = '\0';
   while (!end) {
     for (k = 0; k < 27; k++){
@@ -101,6 +100,40 @@ char * search(Trie *root, char *word)
           letra[1] = '\0';
           strcat(word, letra);
           actual = actual->children[k];
+          break;
+        }
+      }
+      //no tiene hoja util, estamos en la palabra con mas freq
+      if (k == 26){
+        end = true;
+        break;
+      }
+    }
+  }
+  return word;
+}
+
+char * mas_popular(Trie *root)
+{
+  Trie *actual = root;
+  char *word;
+  char letra[100];
+  bool end = false;
+  int k;
+  int m = 0;
+  letra[0] = '\0';
+  while (!end) {
+    for (k = 0; k < 27; k++){
+      if (actual->children[k]){
+        if (actual->children[k]->freq_max == actual->freq_max) {
+          //si entramos, agregamos la letra a la palabra
+          if (k == 26) {
+            letra[m] = ' ';
+          } else {
+            letra[m] = 'a' + k;
+          }
+          letra[m+1] = '\0';
+          actual = actual->children[k];
           m ++;
           break;
         }
@@ -112,6 +145,7 @@ char * search(Trie *root, char *word)
       }
     }
   }
+  word = letra;
   return word;
 }
 

@@ -23,3 +23,5 @@ void insert(Trie *root, char *word, int freq);
 void destroy(Trie *root);
 
 char * search(Trie *root, char *word);
+
+char * mas_popular(Trie *root);

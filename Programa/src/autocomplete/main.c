@@ -60,6 +60,14 @@ int main(int argc, char *argv[])
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, queries);
 		printf("%s\n", chars);
+		char * respuesta;
+		if (length == 0){
+			respuesta = mas_popular(trie);
+		}
+		else {
+			respuesta = search(trie, chars);
+		}
+		fprintf(output, "%s\n", respuesta);
 	}
 
 	fclose(database);
