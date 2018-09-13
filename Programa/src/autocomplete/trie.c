@@ -92,11 +92,14 @@ char * search(Trie *root, char *word)
     for (k = 0; k < 27; k++){
       if (actual->children[k]){
         if (actual->children[k]->freq_max == actual->freq_max) {
+          //si entramos, agregamos la letra a la palabra
           if (k == 26) {
-            letra[m] = ' ';
+            letra[0] = ' ';
           } else {
-            letra[m] = 'a' + k;
+            letra[0] = 'a' + k;
           }
+          letra[1] = '\0';
+          strcat(word, letra);
           actual = actual->children[k];
           m ++;
           break;
@@ -105,8 +108,6 @@ char * search(Trie *root, char *word)
       //no tiene hoja util, estamos en la palabra con mas freq
       if (k == 26){
         end = true;
-        letra[m+1] = '\0';
-        strcat(word, letra);
         break;
       }
     }
