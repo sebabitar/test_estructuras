@@ -39,10 +39,10 @@ int main(int argc, char *argv[])
 		// Ojo que incluyo un espacio en el formato para que no lo considere como parte del string
 		fscanf(database, "%d %d ", &freq, &length);
 		printf("freq = %d, length = %d\n", freq, length);
-
 		// Leo el string aprovechando que se el largo maximo
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, database);
+		printf("%lu\n", strlen(chars));
 		printf("%s\n", chars);
 		chars[length] = '\0';
 
