@@ -65,9 +65,9 @@ char * search(Trie *root, char *word)
     } else {
       index = CHAR_TO_INDEX(word[i]);
     }
-    if (!(actual->children[index]))
-      printf("DIME QUE NO\n");
+    if (!(actual->children[index])){
       return word;
+    }
     actual = actual->children[index];
   }
   //reviso si la palabra es la mejor
@@ -77,6 +77,8 @@ char * search(Trie *root, char *word)
       if (actual->children[j]){
         if (actual->children[j]->freq_max >= actual->freq_max)
           termine = false;
+          printf("No he terminado!! \n");
+          break;
       }
     }
     if (termine)
