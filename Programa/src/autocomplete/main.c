@@ -65,12 +65,12 @@ int main(int argc, char *argv[])
 		char * respuesta;
 		if (length == 0){
 			continue;
-			//respuesta = mas_popular(trie);
+			respuesta = mas_popular(trie);
 		}
 		else {
 			respuesta = search(trie, chars);
-			printf("me salio: %s\n", respuesta);
 		}
+		printf("me salio: %s\n", respuesta);
 		fprintf(output, "%s\n", respuesta);
 	}
 	destroy(trie);
