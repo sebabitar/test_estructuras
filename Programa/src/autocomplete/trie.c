@@ -113,7 +113,9 @@ char * search(Trie *root, char *word)
             strcat(word, letra);
             break;
           }
+        break;
         }
+
   }
   printf("%s\n", word);
   return word;
