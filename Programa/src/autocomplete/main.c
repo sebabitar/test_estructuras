@@ -64,7 +64,6 @@ int main(int argc, char *argv[])
 		printf("%lu\n", strlen(chars));
 		char * respuesta;
 		if (length == 0){
-			continue;
 			respuesta = mas_popular(trie);
 		}
 		else {

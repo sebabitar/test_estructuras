@@ -116,7 +116,6 @@ char * search(Trie *root, char *word)
 
 char * mas_popular(Trie *root)
 {
-  printf("entramos\n");
   Trie *actual = root;
   char *word = {0};
   char letra[100];
