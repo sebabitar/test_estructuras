@@ -107,6 +107,7 @@ char * search(Trie *root, char *word)
           if (k == 26){
             end = true;
             letra[m+1] = '\0';
+            printf("%s\n", letra);
             strcat(word, letra);
             break;
           }
