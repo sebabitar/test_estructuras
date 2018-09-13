@@ -87,21 +87,21 @@ char * search(Trie *root, char *word)
       int m = 0;
       while (!end) {
         for (k = 0; k < 27; k++){
-          if (actual->children[index]){
-            if (actual->children[index]->freq_max == actual->freq_max) {
-              printf("ENTREE PLPPLPLP\n");
-              if (index == 26) {
+
+          if (actual->children[k]){
+            if (actual->children[k]->freq_max == actual->freq_max) {
+              if (k == 26) {
                 letra[m] = ' ';
               } else {
-                if (index == 0){
+                if (k == 0){
                   letra[m] = 'a';
                 } else {
-                  letra[m] = 'a' + index;
+                  letra[m] = 'a' + k;
                   printf("%c\n", letra[m]);
                 }
               }
               letra[m+1] = '\0';
-              actual = actual->children[index];
+              actual = actual->children[k];
               m ++;
               break;
               }
@@ -109,12 +109,10 @@ char * search(Trie *root, char *word)
           }
           if (k == 26){
             end = true;
-
             printf("la variable letra tiene: %s. nose que onda\n", letra);
             strcat(word, letra);
             break;
           }
-        break;
         }
 
   }
