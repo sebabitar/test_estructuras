@@ -56,14 +56,13 @@ int main(int argc, char *argv[])
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, queries);
 		char * respuesta;
-		printf("QUEIEIE");
 		if (length == 0){
 			continue;
 			//respuesta = mas_popular(trie);
 		}
 		else {
 			respuesta = search(trie, chars);
-			printf("me salio: %s\n", respuesta);
+			//printf("me salio: %s\n", respuesta);
 		}
 		fprintf(output, "%s\n", respuesta);
 	}

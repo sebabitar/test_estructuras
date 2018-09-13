@@ -53,7 +53,6 @@ void insert(Trie *root, char *word, int freq)
 
 char * search(Trie *root, char *word)
 {
-  printf("hola");
   int length = strlen(word);
   int index;
   Trie *actual = root;
@@ -65,6 +64,7 @@ char * search(Trie *root, char *word)
       index = CHAR_TO_INDEX(word[i]);
     }
     if (!(actual->children[index])){
+      printf("really nigga");
       return word;
     }
     actual = actual->children[index];
@@ -81,7 +81,7 @@ char * search(Trie *root, char *word)
       }
     }
     if (termine)
-      printf("aqui!!!!\n");
+      //printf("aqui!!!!\n");
       return word;
   }
   char letra[2];
@@ -94,7 +94,7 @@ char * search(Trie *root, char *word)
       if (actual->children[k]){
         if (actual->children[k]->freq_max == actual->freq_max) {
           //si entramos, agregamos la letra a la palabra
-          printf("NONONOONOONO\n");
+          //printf("NONONOONOONO\n");
           if (k == 26) {
             letra[0] = ' ';
           } else {
