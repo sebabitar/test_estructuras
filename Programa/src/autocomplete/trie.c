@@ -61,7 +61,7 @@ char * search(Trie *root, char *word)
   for (int i = 0; i < length; i++)
   {
     if (word[i] == ' '){
-      index = 27;
+      index = 26;
     } else {
       index = CHAR_TO_INDEX(word[i]);
     }
