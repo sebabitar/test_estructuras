@@ -89,6 +89,7 @@ char * search(Trie *root, char *word)
         for (k = 0; k < 27; k++){
           if (actual->children[index]){
             if (actual->children[index]->freq_max == actual->freq_max) {
+              printf("ENTREE PLPPLPLP\n");
               if (index == 26) {
                 letra[m] = ' ';
               } else {
