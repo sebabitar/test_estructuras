@@ -93,6 +93,7 @@ char * search(Trie *root, char *word)
               } else {
                 letra[0] = 'a' + index;
                 }
+              letra[1] = '\0';
               strcat(word, letra);
               actual = actual->children[index];
               break;
