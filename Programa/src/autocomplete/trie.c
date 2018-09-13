@@ -86,7 +86,7 @@ char * search(Trie *root, char *word)
       int k;
       int m = 0;
       while (!end) {
-        for (k = 0; k < 26; k++){
+        for (k = 0; k < 27; k++){
           if (actual->children[index]){
             if (actual->children[index]->freq_max == actual->freq_max) {
               if (index == 26) {
