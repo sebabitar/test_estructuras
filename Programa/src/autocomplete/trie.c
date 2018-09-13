@@ -91,6 +91,7 @@ char * search(Trie *root, char *word)
       if (actual->children[k]){
         if (actual->children[k]->freq_max == actual->freq_max) {
           //si entramos, agregamos la letra a la palabra
+          printf("NONONOONOONO\n");
           if (k == 26) {
             letra[0] = ' ';
           } else {
