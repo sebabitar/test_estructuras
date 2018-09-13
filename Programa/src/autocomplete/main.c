@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 
 		// Leo el string aprovechando que se el largo maximo
 		char chars[MAX_LENGTH];
-		fgets(chars, length, database);
+		fgets(chars, MAX_LENGTH, database);
 		printf("%s\n", chars);
 		chars[length] = '\0';
 
