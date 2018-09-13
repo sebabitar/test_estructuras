@@ -42,9 +42,9 @@ int main(int argc, char *argv[])
 		// Leo el string aprovechando que se el largo maximo
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, database);
+		chars[length] = '\0';
 		printf("%lu\n", strlen(chars));
 		printf("%s\n", chars);
-		chars[length] = '\0';
 
 		insert(trie, chars, freq);
 
