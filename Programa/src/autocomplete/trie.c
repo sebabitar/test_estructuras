@@ -109,6 +109,7 @@ char * search(Trie *root, char *word)
           m ++;
           break;
         }
+      printf("%d\n", k);
       }
     }
     if (k == 26){
