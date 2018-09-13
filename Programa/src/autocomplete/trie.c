@@ -61,6 +61,7 @@ char * search(Trie *root, char *word)
     if (word[i] == ' '){
       index = 26;
     } else {
+      printf("%c\n", word[i]);
       index = CHAR_TO_INDEX(word[i]);
     }
     if (!(actual->children[index])){
