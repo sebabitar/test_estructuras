@@ -55,11 +55,10 @@ int main(int argc, char *argv[])
 
 	for (int i = 0; i < m; i++) {
 		int length;
-		fscanf(queries, "%d", &length);
+		fscanf(queries, "%d ", &length);
 		printf("length = %d\n", length);
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, queries);
-		printf("%c\n", chars[length-1]);
 		printf("%s\n", chars);
 		char * respuesta;
 		if (length == 0){
