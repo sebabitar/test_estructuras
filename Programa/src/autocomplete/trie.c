@@ -10,7 +10,6 @@
 // https://gist.github.com/cijogeorge/20b41a0dc7385fbc58c93d2e7837c5ee
 
 
-
 #define CHAR_TO_INDEX(c) ((int)c - (int)'a')
 
 Trie *trie_init()
@@ -70,14 +69,13 @@ char * search(Trie *root, char *word)
     }
     actual = actual->children[index];
   }
-  //reviso si la palabra es la mejor
+  //reviso si es palabra y si es la mejor
   if (actual->end_of_word){
     bool termine = true;
     for (int j = 0; j < 27; j++){
       if (actual->children[j]){
         if (actual->children[j]->freq_max >= actual->freq_max){
           termine = false;
-          printf("No he terminado!! \n");
           break;
         }
       }
@@ -85,37 +83,34 @@ char * search(Trie *root, char *word)
     if (termine)
       return word;
   }
-  char letra[100] = {0};
+  char letra[100];
   bool end = false;
   int k;
   int m = 0;
+  letra[0] = '\0';
   while (!end) {
     for (k = 0; k < 27; k++){
       if (actual->children[k]){
         if (actual->children[k]->freq_max == actual->freq_max) {
-          printf("la posicion es %d\n", k);
           if (k == 26) {
             letra[m] = ' ';
           } else {
             letra[m] = 'a' + k;
           }
-          printf("%c\n", letra[m]);
           actual = actual->children[k];
           m ++;
           break;
         }
       }
+      //no tiene hoja util, estamos en la palabra con mas freq
       if (k == 26){
         end = true;
         letra[m+1] = '\0';
-        printf("la variable letra tiene: %s. nose que onda\n", letra);
         strcat(word, letra);
         break;
       }
     }
-
   }
-  printf("%s\n", word);
   return word;
 }
 
@@ -127,36 +122,4 @@ void destroy(Trie *root)
     }
   }
   free(root);
-}
-
-
-bool isLeafNode(Trie *root)
-{
-    return root->end_of_word != false;
-}
-
-void display(Trie *root, char str[], int level)
-{
-    // If node is leaf node, it indiicates end
-    // of string, so a null charcter is added
-    // and string is displayed
-    if (isLeafNode(root))
-    {
-        str[level] = '\0';
-        printf("%s\n", str);
-    }
-
-    int i;
-    for (i = 0; i < 27; i++)
-    {
-        // if NON NULL child is found
-        // add parent key to str and
-        // call the display function recursively
-        // for child node
-        if (root->children[i])
-        {
-            str[level] = i + 'a';
-            display(root->children[i], str, level + 1);
-        }
-    }
 }

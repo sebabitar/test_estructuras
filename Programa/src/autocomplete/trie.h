@@ -22,8 +22,4 @@ void insert(Trie *root, char *word, int freq);
 
 void destroy(Trie *root);
 
-bool isLeafNode(Trie *root);
-
-void display(Trie *root, char str[], int level);
-
 char * search(Trie *root, char *word);
