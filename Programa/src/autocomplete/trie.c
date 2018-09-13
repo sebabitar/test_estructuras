@@ -81,7 +81,7 @@ char * search(Trie *root, char *word)
         if (termine)
           return word;
       }
-      char letra[100];
+      char letra[100] = {0};
       bool end = false;
       int k;
       int m = 0;
