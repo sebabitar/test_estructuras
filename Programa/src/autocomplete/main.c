@@ -101,7 +101,7 @@ int main()
       insert(trie, keys[j], 5);
 
   char * str;
-	char key[20] = "the";
+	char key[20] = "th";
 	str = search(trie, key);
 
 	printf("%s\n", str);
