@@ -91,6 +91,7 @@ char * search(Trie *root, char *word)
   int m = 0;
   while (!end) {
     for (k = 0; k < 27; k++){
+      printf("%d\n", k);
       if (actual->children[k]){
         if (actual->children[k]->freq_max == actual->freq_max) {
           printf("la posicion es %d\n", k);
@@ -109,7 +110,6 @@ char * search(Trie *root, char *word)
           m ++;
           break;
         }
-      printf("%d\n", k);
       }
     }
     if (k == 26){
