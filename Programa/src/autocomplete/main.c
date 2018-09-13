@@ -44,7 +44,9 @@ int main(int argc, char *argv[])
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, database);
 		printf("%s\n", chars);
+		printf("%c\n", chars[length-1]);
 		chars[length] = '\0';
+
 		insert(trie, chars, freq);
 
 
