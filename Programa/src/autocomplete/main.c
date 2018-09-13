@@ -18,12 +18,11 @@ int main()
   for (int j = 0; j < ARRAY_SIZE(keys); j++)
       insert(trie, keys[j], 5);
 
-	int level = 0;
   char str[20];
-	str = search(trie, "the")
+	str = search(trie, "the");
 	printf("%s\n", str);
 
-	
+
 
 	destroy(trie);
 	return 0;
