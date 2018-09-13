@@ -38,7 +38,7 @@ void insert(Trie *root, char *word, int freq)
     for (int i = 0; i < length; i++)
     {
         if (word[i] == ' '){
-          index = 27;
+          index = 26;
         } else {
           index = CHAR_TO_INDEX(word[i]);
         }
