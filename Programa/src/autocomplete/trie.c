@@ -117,7 +117,7 @@ char * search(Trie *root, char *word)
 char * mas_popular(Trie *root)
 {
   Trie *actual = root;
-  char letra[100];
+  static char letra[100];
   letra[0] = '\0';
   bool end = false;
   int k;
