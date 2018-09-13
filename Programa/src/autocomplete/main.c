@@ -44,10 +44,8 @@ int main(int argc, char *argv[])
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, database);
 		printf("%s\n", chars);
-		//char * respuesta;
-		//respuesta = search(trie, chars);
-		insert(trie, chars, freq);
 
+		insert(trie, chars, freq);
 
 	}
 	int m;
@@ -67,6 +65,7 @@ int main(int argc, char *argv[])
 		}
 		else {
 			respuesta = search(trie, chars);
+			printf("me salio: %s\n", respuesta);
 		}
 		fprintf(output, "%s\n", respuesta);
 	}
