@@ -62,14 +62,15 @@ int main(int argc, char *argv[])
 		printf("%s\n", chars);
 		char * respuesta;
 		if (length == 0){
-			respuesta = mas_popular(trie);
+			continue;
+			//respuesta = mas_popular(trie);
 		}
 		else {
 			respuesta = search(trie, chars);
 		}
 		fprintf(output, "%s\n", respuesta);
 	}
-
+	destroy(trie);
 	fclose(database);
 	fclose(queries);
 	fclose(output);
