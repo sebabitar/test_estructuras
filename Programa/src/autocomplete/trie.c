@@ -60,62 +60,62 @@ char * search(Trie *root, char *word)
   Trie *actual = root;
   for (int i = 0; i < length; i++)
   {
-      if (word[i] == ' '){
-        index = 27;
-      } else {
-        index = CHAR_TO_INDEX(word[i]);
+    if (word[i] == ' '){
+      index = 27;
+    } else {
+      index = CHAR_TO_INDEX(word[i]);
+    }
+    if (!actual->children[index])
+        return word;
+    actual = actual->children[index];
+  }
+  //reviso si la palabra es la mejor
+  if (actual->end_of_word){
+    bool termine = true;
+    for (int j = 0; j < 27; j++){
+      if (actual->children[index]){
+        if (actual->children[index]->freq_max >= actual->freq_max)
+          termine = false;
       }
-      if (!actual->children[index])
-          return word;
-      actual = actual->children[index];
+    }
+    if (termine)
+      return word;
+  }
+  char letra[100] = {0};
+  bool end = false;
+  int k;
+  int m = 0;
+  while (!end) {
+    for (k = 0; k < 27; k++){
 
-      //reviso si la palabra es la mejor
-      if (actual->end_of_word){
-        bool termine = true;
-        for (int j = 0; j < 27; j++){
-          if (actual->children[index]){
-            if (actual->children[index]->freq_max >= actual->freq_max)
-              termine = false;
-          }
-        }
-        if (termine)
-          return word;
-      }
-      char letra[100] = {0};
-      bool end = false;
-      int k;
-      int m = 0;
-      while (!end) {
-        for (k = 0; k < 27; k++){
-
-          if (actual->children[k]){
-            if (actual->children[k]->freq_max == actual->freq_max) {
-              if (k == 26) {
-                letra[m] = ' ';
-              } else {
-                if (k == 0){
-                  letra[m] = 'a';
-                } else {
-                  letra[m] = 'a' + k;
-                  printf("%c\n", letra[m]);
-                }
-              }
-              letra[m+1] = '\0';
-              actual = actual->children[k];
-              m ++;
-              break;
-              }
+      if (actual->children[k]){
+        if (actual->children[k]->freq_max == actual->freq_max) {
+          if (k == 26) {
+            letra[m] = ' ';
+          } else {
+            if (k == 0){
+              letra[m] = 'a';
+            } else {
+              letra[m] = 'a' + k;
+              printf("%c\n", letra[m]);
             }
           }
-          if (k == 26){
-            end = true;
-            printf("la variable letra tiene: %s. nose que onda\n", letra);
-            strcat(word, letra);
-            break;
+          letra[m+1] = '\0';
+          actual = actual->children[k];
+          m ++;
+          break;
           }
         }
+      }
+      if (k == 26){
+        end = true;
+        printf("la variable letra tiene: %s. nose que onda\n", letra);
+        strcat(word, letra);
+        break;
+      }
+    }
 
-  }
+
   printf("%s\n", word);
   return word;
 }
