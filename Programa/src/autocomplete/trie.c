@@ -84,24 +84,26 @@ char * search(Trie *root, char *word)
       char letra[100];
       bool end = false;
       int k;
+      int m = 0;
       while (!end) {
         for (k = 0; k < 26; k++){
           if (actual->children[index]){
             if (actual->children[index]->freq_max == actual->freq_max) {
               if (index == 26) {
-                letra[0] = ' ';
+                letra[m] = ' ';
               } else {
-                letra[0] = 'a' + index;
+                letra[m] = 'a' + index;
                 }
-              letra[1] = '\0';
-              strcat(word, letra);
               actual = actual->children[index];
+              m += 1;
               break;
               }
             }
           }
           if (k == 26){
             end = true;
+            letra[m+1] = '\0';
+            strcat(word, letra);
             break;
           }
         }
