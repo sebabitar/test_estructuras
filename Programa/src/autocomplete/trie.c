@@ -96,6 +96,7 @@ char * search(Trie *root, char *word)
                   letra[m] = 'a';
                 } else {
                   letra[m] = 'a' + index;
+                  printf("%c\n", letra[m]);
                 }
               }
               letra[m+1] = '\0';
