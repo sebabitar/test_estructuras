@@ -38,13 +38,12 @@ int main(int argc, char *argv[])
 		int freq, length;
 		// Ojo que incluyo un espacio en el formato para que no lo considere como parte del string
 		fscanf(database, "%d %d ", &freq, &length);
-		printf("freq = %d, length = %d\n", freq, length);
+		//printf("freq = %d, length = %d\n", freq, length);
 		// Leo el string aprovechando que se el largo maximo
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, database);
 		chars[length] = '\0';
-		printf("%lu\n", strlen(chars));
-		printf("%s\n", chars);
+		//printf("%s\n", chars);
 
 		insert(trie, chars, freq);
 
@@ -56,12 +55,10 @@ int main(int argc, char *argv[])
 	for (int i = 0; i < m; i++) {
 		int length;
 		fscanf(queries, "%d ", &length);
-		printf("length = %d\n", length);
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, queries);
 		chars[length] = '\0';
 		printf("consulta = %s\n", chars);
-		printf("%lu\n", strlen(chars));
 		char * respuesta;
 		if (length == 0){
 			respuesta = mas_popular(trie);

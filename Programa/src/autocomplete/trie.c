@@ -118,6 +118,7 @@ char * mas_popular(Trie *root)
 {
   Trie *actual = root;
   char letra[100];
+  letra[0] = '\0';
   bool end = false;
   int k;
   int m = 0;
@@ -146,7 +147,7 @@ char * mas_popular(Trie *root)
     }
   }
   printf("letra = %s\n", letra);
-  return &letra;
+  return letra;
 }
 
 void destroy(Trie *root)
