@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -54,10 +55,8 @@ int main(int argc, char *argv[])
 	for (int i = 0; i < m; i++) {
 		int length;
 		fscanf(queries, "%d", &length);
-		printf("length = %d\n", length);
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, queries);
-		printf("%s\n", chars);
 		char * respuesta;
 		if (length == 0){
 			continue;
@@ -76,11 +75,11 @@ int main(int argc, char *argv[])
 	return 0;
 }
 
+*/
 
 
 
 
-/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -112,5 +111,3 @@ int main()
 	destroy(trie);
 	return 0;
 }
-
-*/
