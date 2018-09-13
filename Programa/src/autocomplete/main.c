@@ -45,15 +45,18 @@ int main(int argc, char *argv[])
 		insert(trie, chars, freq);
 
 	}
+
 	int m;
 	fscanf(queries, "%d", &m);
 
-	for (int i = 0; i < m; i++) {
+	for (int i = 0; i < m; i++)
+	{
 		int length;
 		fscanf(queries, "%d", &length);
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, queries);
 		char * respuesta;
+		printf("QUEIEIE");
 		if (length == 0){
 			continue;
 			//respuesta = mas_popular(trie);
@@ -64,6 +67,7 @@ int main(int argc, char *argv[])
 		}
 		fprintf(output, "%s\n", respuesta);
 	}
+
 	destroy(trie);
 	fclose(database);
 	fclose(queries);
