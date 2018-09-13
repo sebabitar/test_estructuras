@@ -20,7 +20,7 @@ int main()
 
   char str[20];
 	char key[20] = "the";
-	search(trie, key);
+	str = search(trie, key);
 
 	printf("%s\n", str);
 
