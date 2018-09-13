@@ -88,6 +88,7 @@ char * search(Trie *root, char *word)
   letra[0] = '\0';
   while (!end) {
     for (k = 0; k < 27; k++){
+      printf("%d\n", k);
       if (actual->children[k]){
         if (actual->children[k]->freq_max == actual->freq_max) {
           //si entramos, agregamos la letra a la palabra
