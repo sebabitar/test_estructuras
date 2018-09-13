@@ -13,6 +13,7 @@ struct trie
   struct trie *children[27]; //cantidad de palabras en el abecedario + espacio
   bool end_of_word;
   int frequencia;
+  int freq_max;
 };
 
 Trie *trie_init();
@@ -24,3 +25,5 @@ void destroy(Trie *root);
 bool isLeafNode(Trie *root);
 
 void display(Trie *root, char str[], int level);
+
+char * search(Trie *root, char *word);

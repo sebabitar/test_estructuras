@@ -16,11 +16,12 @@
 Trie *trie_init()
 {
   Trie * trie=(Trie*) malloc(sizeof(Trie));
-  for(int i=0;i<26;i++){
+  for(int i=0;i<27;i++){
     trie->children[i] = NULL;
   }
   trie->end_of_word = false;
   trie->frequencia = 0;
+  trie->freq_max = 0;
   return trie;
 }
 
@@ -31,19 +32,80 @@ void insert(Trie *root, char *word, int freq)
     int index;
     Trie *actual = root;
 
+    if (freq > root->freq_max){
+      root->freq_max = freq;
+    }
     for (int i = 0; i < length; i++)
     {
         if (word[i] == ' '){
-          index = 26;
+          index = 27;
         } else {
           index = CHAR_TO_INDEX(word[i]);
         }
         if (!actual->children[index])
             actual->children[index] = trie_init();
         actual = actual->children[index];
+        if (freq > actual->freq_max){
+          actual->freq_max = freq;
+        }
     }
     actual->end_of_word = true;
     actual->frequencia = freq;
+}
+
+char * search(Trie *root, char *word)
+{
+  int length = strlen(word);
+  int index;
+  Trie *actual = root;
+  for (int i = 0; i < length; i++)
+  {
+      if (word[i] == ' '){
+        index = 27;
+      } else {
+        index = CHAR_TO_INDEX(word[i]);
+      }
+      if (!actual->children[index])
+          return word;
+      actual = actual->children[index];
+
+      //reviso si la palabra es la mejor
+      if (actual->end_of_word){
+        bool termine = true;
+        for (int j = 0; j < 27; j++){
+          if (actual->children[index]){
+            if (actual->children[index]->freq_max >= actual->freq_max)
+              termine = false;
+          }
+        }
+        if (termine)
+          return word;
+      }
+      char letra;
+      bool end = false;
+      int k;
+      while (!end) {
+        for (k = 0; k < 26; k++){
+          if (actual->children[index]){
+            if (actual->children[index]->freq_max == actual->freq_max) {
+              if (index == 26) {
+                letra = ' ';
+              } else {
+                letra = 'a' + index;
+                }
+              strcat(word, &letra);
+              actual = actual->children[index];
+              break;
+              }
+            }
+          }
+          if (k == 26){
+            end = true;
+            break;
+          }
+        }
+  }
+  return word;
 }
 
 void destroy(Trie *root)
@@ -55,6 +117,7 @@ void destroy(Trie *root)
   }
   free(root);
 }
+
 
 bool isLeafNode(Trie *root)
 {
