@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
 		int length;
 		fscanf(queries, "%d", &length);
 		char chars[MAX_LENGTH];
-		fgets(chars, MAX_LENGTH, queries);
+		fgets(chars, length, queries);
 		char * respuesta;
 		if (length == 0){
 			continue;
