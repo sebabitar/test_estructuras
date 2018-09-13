@@ -44,7 +44,6 @@ int main(int argc, char *argv[])
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, database);
 		printf("%s\n", chars);
-		printf("%c\n", chars[length]);
 		chars[length] = '\0';
 
 		insert(trie, chars, freq);
@@ -60,6 +59,7 @@ int main(int argc, char *argv[])
 		printf("length = %d\n", length);
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, queries);
+		printf("%c\n", chars[length-1]);
 		printf("%s\n", chars);
 		char * respuesta;
 		if (length == 0){
