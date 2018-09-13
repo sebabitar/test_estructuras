@@ -113,7 +113,7 @@ char * search(Trie *root, char *word)
           }
         }
   }
-  printf("%s\n", word);
+  printf("la variable letra tiene: %s. nose que onda\n", word);
   return word;
 }
 
