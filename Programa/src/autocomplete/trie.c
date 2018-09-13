@@ -53,6 +53,7 @@ void insert(Trie *root, char *word, int freq)
 
 char * search(Trie *root, char *word)
 {
+  printf("hola");
   int length = strlen(word);
   int index;
   Trie *actual = root;
