@@ -59,7 +59,7 @@ int main(int argc, char *argv[])
 		printf("length = %d\n", length);
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, queries);
-
+		chars[length] = '\0';
 		printf("consulta = %s\n", chars);
 		printf("%lu\n", strlen(chars));
 		char * respuesta;
