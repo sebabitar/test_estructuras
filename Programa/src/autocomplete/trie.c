@@ -81,7 +81,7 @@ char * search(Trie *root, char *word)
         if (termine)
           return word;
       }
-      char letra;
+      char letra[0];
       bool end = false;
       int k;
       while (!end) {
@@ -89,11 +89,11 @@ char * search(Trie *root, char *word)
           if (actual->children[index]){
             if (actual->children[index]->freq_max == actual->freq_max) {
               if (index == 26) {
-                letra = ' ';
+                letra[0] = ' ';
               } else {
-                letra = 'a' + index;
+                letra[0] = 'a' + index;
                 }
-              strcat(word, &letra);
+              strcat(word, letra);
               actual = actual->children[index];
               break;
               }
@@ -101,8 +101,6 @@ char * search(Trie *root, char *word)
           }
           if (k == 26){
             end = true;
-            letra = '/0';
-            strcat(word, &letra);
             break;
           }
         }
