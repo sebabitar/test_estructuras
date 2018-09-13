@@ -146,7 +146,6 @@ char * mas_popular(Trie *root)
       }
     }
   }
-  printf("letra = %s\n", letra);
   return letra;
 }
 

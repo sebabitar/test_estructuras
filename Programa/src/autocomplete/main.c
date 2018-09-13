@@ -58,7 +58,6 @@ int main(int argc, char *argv[])
 		char chars[MAX_LENGTH];
 		fgets(chars, MAX_LENGTH, queries);
 		chars[length] = '\0';
-		printf("consulta = %s\n", chars);
 		char * respuesta;
 		if (length == 0){
 			respuesta = mas_popular(trie);
