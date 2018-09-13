@@ -66,8 +66,6 @@ char * search(Trie *root, char *word)
     }
     //printf("%d\n", index);
     if (!(actual->children[index])){
-
-      printf("really nigga: %d \n", index);
       return word;
     }
     actual = actual->children[index];
@@ -84,7 +82,6 @@ char * search(Trie *root, char *word)
       }
     }
     if (termine)
-      //printf("aqui!!!!\n");
       return word;
   }
   char letra[2];
@@ -96,7 +93,6 @@ char * search(Trie *root, char *word)
       if (actual->children[k]){
         if (actual->children[k]->freq_max == actual->freq_max) {
           //si entramos, agregamos la letra a la palabra
-          //printf("NONONOONOONO\n");
           if (k == 26) {
             letra[0] = ' ';
           } else {
@@ -151,6 +147,7 @@ char * mas_popular(Trie *root)
     }
   }
   word = letra;
+  printf("%s\n", word);
   return word;
 }
 
