@@ -46,8 +46,6 @@ int main(int argc, char *argv[])
 		//printf("%s\n", chars);
 
 		insert(trie, chars, freq);
-
-
 	}
 
 	int m;
@@ -68,7 +66,6 @@ int main(int argc, char *argv[])
 		}
 		fprintf(output, "%s\n", respuesta);
 	}
-
 
 	destroy(trie);
 	fclose(database);
