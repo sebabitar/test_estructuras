@@ -49,6 +49,7 @@ int main(int argc, char *argv[])
 
 
 	}
+	/*
 	int m;
 	fscanf(queries, "%d", &m);
 
@@ -66,9 +67,10 @@ int main(int argc, char *argv[])
 		else {
 			respuesta = search(trie, chars);
 		}
-		printf("me salio: %s\n", respuesta);
 		fprintf(output, "%s\n", respuesta);
 	}
+	*/
+
 	destroy(trie);
 	fclose(database);
 	fclose(queries);
