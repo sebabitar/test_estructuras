@@ -48,6 +48,7 @@ int main(int argc, char *argv[])
 		insert(trie, chars, freq);
 	}
 
+	/*
 	int m;
 	fscanf(queries, "%d", &m);
 
@@ -66,13 +67,14 @@ int main(int argc, char *argv[])
 		}
 		fprintf(output, "%s\n", respuesta);
 	}
-
+*/
 	destroy(trie);
 	fclose(database);
 	fclose(queries);
 	fclose(output);
 	return 0;
 }
+
 
 
 
