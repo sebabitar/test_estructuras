@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 
 
 	}
-	/*
+
 	int m;
 	fscanf(queries, "%d", &m);
 
@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 		}
 		fprintf(output, "%s\n", respuesta);
 	}
-	*/
+	
 
 	destroy(trie);
 	fclose(database);
